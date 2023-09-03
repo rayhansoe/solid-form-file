@@ -6,6 +6,8 @@ export default function Home() {
   const [searchParams] = useSearchParams();
   const [navigating, {Form}] = createServerAction$(async (form: FormData, {request}) => {
     console.log(form);
+    console.log(form.get('q'), 'as query');
+    console.log(form.get('file'), 'as file');
     
     const query = form.get("q") as string;
     return redirect(`/?q=${query}`)
