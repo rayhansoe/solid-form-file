@@ -10,6 +10,11 @@ export default function Home() {
     console.log(form.get('file'), 'as file');
     
     const query = form.get("q") as string;
+    const file = form.get("file") as File;
+
+    // console.log();
+    console.log(file instanceof File);
+    
     return redirect(`/?q=${query}`)
   })
   return (
